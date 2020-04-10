@@ -1,4 +1,6 @@
-# Magisk Installer unofficial
+# Magisk Installer unofficial 
+
+[Chinese Version](https://github.com/E7KMbb/magisk-module-installer-cn)
 
 **Update `README.md` if you want to submit your module to the online repo!**
 
