@@ -25,6 +25,17 @@ REPLACE_EXAMPLE="
 # Construct your own list here
 REPLACE="
 "
+##########################################################################################
+# Install
+##########################################################################################
+
+# If SKIPUNZIP = 1 you will need to use the following code
+# Please remove when needed #
+#on_install() {
+#  # Extract $ZIPFILE/system to $MODPATH
+#  ui_print "- Extracting module files"
+#  unzip -o "$ZIPFILE" 'system/*' -d $MODPATH >&2
+#}
 
 ##########################################################################################
 # Permissions
