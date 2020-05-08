@@ -81,15 +81,9 @@ REPLACE="
 # If SKIPUNZIP = 1 you will need to use the following code
 # Of course, you can also customize the installation rules
 # Please remove when needed #
-#  # Extract $ZIPFILE/system to $MODPATH
+#  # Extract $ZIPFILE to $MODPATH
 #  ui_print "- Extracting module files"
-#  unzip -o "$ZIPFILE" 'system/*' -d $MODPATH >&2
-#  unzip -o "$ZIPFILE" 'module.prop' -d $MODPATH >&2
-#  unzip -o "$ZIPFILE" 'system.prop' -d $MODPATH >&2
-#  unzip -o "$ZIPFILE" 'sepolicy.rule' -d $MODPATH >&2
-#  unzip -o "$ZIPFILE" 'service.sh' -d $MODPATH >&2
-#  unzip -o "$ZIPFILE" 'post-fs-data.sh' -d $MODPATH >&2
-#  unzip -o "$ZIPFILE" 'uninstall.sh' -d $MODPATH >&2
+#  unzip -o "$ZIPFILE" -x 'META-INF/*' -d $MODPATH >&2
 
 ##########################################################################################
 # Permissions
