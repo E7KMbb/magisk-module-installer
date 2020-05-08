@@ -30,12 +30,17 @@ REPLACE="
 ##########################################################################################
 
 # If SKIPUNZIP = 1 you will need to use the following code
+# Of course, you can also customize the installation rules
 # Please remove when needed #
-#on_install() {
 #  # Extract $ZIPFILE/system to $MODPATH
 #  ui_print "- Extracting module files"
 #  unzip -o "$ZIPFILE" 'system/*' -d $MODPATH >&2
-#}
+#  unzip -o "$ZIPFILE" 'module.prop' -d $MODPATH >&2
+#  unzip -o "$ZIPFILE" 'system.prop' -d $MODPATH >&2
+#  unzip -o "$ZIPFILE" 'sepolicy.rule' -d $MODPATH >&2
+#  unzip -o "$ZIPFILE" 'service.sh' -d $MODPATH >&2
+#  unzip -o "$ZIPFILE" 'post-fs-data.sh' -d $MODPATH >&2
+#  unzip -o "$ZIPFILE" 'uninstall.sh' -d $MODPATH >&2
 
 ##########################################################################################
 # Permissions
@@ -58,5 +63,8 @@ set_permissions() {
   
   # set_perm $MODPATH/system/lib/libart.so 0 0 0644
   # set_perm /data/local/tmp/file.txt 0 0 644
+  
+  # The following is the default rule, DO NOT remove
+  set_perm_recursive $MODPATH 0 0 0755 0644
 }
 
