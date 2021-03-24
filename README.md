@@ -1,4 +1,5 @@
 # Magisk Installer unofficial 
+### E7KMbb/AiSauce
 
 [Chinese Version](https://github.com/E7KMbb/magisk-module-installer-cn)
 

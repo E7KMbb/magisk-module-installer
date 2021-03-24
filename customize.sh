@@ -82,8 +82,7 @@ REPLACE="
 ##########################################################################################
 
 # If SKIPUNZIP = 1 you will need to use the following code
-# Of course, you can also customize the installation rules
-# Please remove when needed #
+# Of course, you can also customize the installation rules,please remove when needed #
 # Extract $ZIPFILE to $MODPATH
 #  ui_print "- Extracting module files"
 #  unzip -o "$ZIPFILE" -x 'META-INF/*' -d $MODPATH >&2
@@ -96,23 +95,20 @@ REPLACE="
 # Permissions
 ##########################################################################################
 
-  # Remove this if adding to this function
+# Note that all files/folders in magisk module directory have the $MODPATH prefix - keep this prefix on all of your files/folders
+# Some examples:
+  
+# For directories (includes files in them):
+# set_perm_recursive  <dirname>                <owner> <group> <dirpermission> <filepermission> <contexts> (default: u:object_r:system_file:s0)
 
-  # Note that all files/folders in magisk module directory have the $MODPATH prefix - keep this prefix on all of your files/folders
-  # Some examples:
-  
-  # For directories (includes files in them):
-  # set_perm_recursive  <dirname>                <owner> <group> <dirpermission> <filepermission> <contexts> (default: u:object_r:system_file:s0)
-  
-  # set_perm_recursive $MODPATH/system/lib 0 0 0755 0644
-  # set_perm_recursive $MODPATH/system/vendor/lib/soundfx 0 0 0755 0644
+# set_perm_recursive $MODPATH/system/lib 0 0 0755 0644
+# set_perm_recursive $MODPATH/system/vendor/lib/soundfx 0 0 0755 0644
 
-  # For files (not in directories taken care of above)
-  # set_perm  <filename>                         <owner> <group> <permission> <contexts> (default: u:object_r:system_file:s0)
+# For files (not in directories taken care of above)
+# set_perm  <filename>                         <owner> <group> <permission> <contexts> (default: u:object_r:system_file:s0)
   
-  # set_perm $MODPATH/system/lib/libart.so 0 0 0644
-  # set_perm /data/local/tmp/file.txt 0 0 644
+# set_perm $MODPATH/system/lib/libart.so 0 0 0644
+# set_perm /data/local/tmp/file.txt 0 0 644
   
-  # The following is the default rule, DO NOT remove
-  set_perm_recursive $MODPATH 0 0 0755 0644
-
+# The following is the default rule, DO NOT remove
+set_perm_recursive $MODPATH 0 0 0755 0644
